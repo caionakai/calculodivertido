@@ -5,7 +5,7 @@
         <img src="../../../assets/Main/star.png" />
         <div slot="modal-header-close"></div>
        <div slot="modal-footer" class="w-100">
-         <b-btn size="sm" class="center" variant="success" @click="alteraComponentePai()">
+         <b-btn size="sm" class="center" variant="success" @click="isLast? goHome() : alteraComponentePai()">
            Próximo
          </b-btn>
        </div>
@@ -17,11 +17,12 @@
 export default {
     data () {
         return {
-            show: false,
+
         }
     },
     props: {
         show: Boolean,
+        isLast: Boolean,
     },
     methods:{
         alteraComponentePai(){
@@ -29,6 +30,9 @@ export default {
         },
         onHidden(evt){
             this.alteraComponentePai();
+        },
+        goHome(){
+            this.$router.push({ name: "IndexDerivative" });
         }
     }
 }

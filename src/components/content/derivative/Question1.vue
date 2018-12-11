@@ -125,7 +125,7 @@
 
                     <b-tab :disabled=isDisabled3>
                         <template slot="title">Exercício 3
-                            <i class="material-icons" id="icone" v-if="!isDisabled3"> done </i>
+                            <i class="material-icons" id="icone" v-if="iconTab3"> done </i>
                         </template>
                         <div class="enunciado">
                             <a id="quest">Questão:</a>
@@ -176,7 +176,8 @@
 
                 </b-tabs>
             </b-card>
-            <ModalSuccess v-if="ok" :show="ok" @modal="changeOkfromChild()"></ModalSuccess>
+            <ModalSuccess v-if="ok" :isLast="isLast? true : false" :show="ok" @modal="changeOkfromChild"></ModalSuccess>
+            <ModalFailure v-if="error" :show="error" @modal="changeTabfromChild"></ModalFailure>
         </div>
 
 
@@ -186,21 +187,25 @@
 
 <script>
 import ModalSuccess from "./ModalSuccess";
+import ModalFailure from "./ModalFailure";
 export default {
   name: "Question1Derivative",
   components: {
-    ModalSuccess
+    ModalSuccess,
+    ModalFailure,
   },
   data(){
       return{
           tabIndex: 1,
           isDisabled2: true,
           isDisabled3: true,
+          iconTab3: false,
           ok: false,
+          isLast: false,
+          selected: false,
+          error: false,
+          error_count: 0,
       }
-  },
-  mounted(){
-    this.derivada = JSON.parse(localStorage.getItem("derivada"));
   },
   methods: {
     goMain(){
@@ -213,17 +218,31 @@ export default {
             this.tabIndex++;
             this.ok = true;
         }
-        if(this.selected == "2b"){
+        else if(this.selected == "2b"){
+            // libera a terceira tab
             this.isDisabled3 = false;
+
+            // soma na variável pra trocar o tabs
             this.tabIndex++;
+            
+            // abre o modal
             this.ok = true;
         }
-        if(this.selected == "3d"){
-            // this.ok = true;
-            this.derivada.first = true;
-            localStorage.setItem('derivada', JSON.stringify(this.derivada));
-            // this.isDisabled = false;
-            //  do something
+        else if(this.selected == "3d"){
+            this.iconTab3 = true;
+            // ativa variavel para redirecionar pra pagina inicial
+            this.isLast = true;
+            // abre o modal
+            this.ok = true;
+            localStorage.setItem('level', JSON.stringify(this.level))
+        }
+        else{
+            if(this.error_count == 1){
+                this.error = true;
+                this.error_count = 0;
+            }else{
+                this.error_count++;
+            }
         }
 
     },
@@ -232,8 +251,39 @@ export default {
         this.tabIndex++;
         this.ok = boolean;
         this.selected = false;
+    },
+    changeTabfromChild(controle){
+        if(controle){
+            if(this.tabIndex == 1){
+                this.isDisabled2 = false;
+            }
+            else if(this.tabIndex == 2){
+                this.isDisabled3 = false;
+            }
+            else if(this.tabIndex == 3){
+                this.$router.push({ name: "IndexDerivative" });
+            }
+            this.tabIndex++;
+        }
+        else{
+            this.tabIndex = 1;
+        }
+        this.selected = false;
+        this.error = false;
     }
-  }
+  },
+  beforeCreate(){
+    // retrieve 'derivada' data available on localStorage
+    this.derivada = JSON.parse(localStorage.getItem("derivada"));
+  },
+  mounted() {
+    // verifica se o exercicio já foi feito antes, se sim então libera a navegação entre as tabs
+    if(this.derivada.first){
+        this.isDisabled2 = false;
+        this.isDisabled3 = false;
+        this.iconTab3 = true;
+    }
+  },
 };
 </script>
 
