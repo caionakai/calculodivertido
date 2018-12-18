@@ -2,10 +2,11 @@
     <div class="whole">
         <div id="nave">
             <b-nav fill tabs>
+                <b-tooltip class="blue-tip" target="conteudo" title="Você está estudando derivadas!"></b-tooltip>
                 <b-nav-item href="/"> <i class="material-icons"> keyboard_arrow_left</i> </b-nav-item>
-                <b-nav-item active>Derivadas</b-nav-item>
-                <div class="col-sm-2" id="progress">Progresso</div>
-                <b-nav-item> 
+                <b-nav-item active id="conteudo" >Derivadas</b-nav-item>
+                <div v-b-tooltip.hover title="Aqui é exibido o seu progresso dos conteúdos já estudados!" class="col-sm-2" id="progress">Progresso</div>
+                <b-nav-item v-b-tooltip.hover title="Aqui é exibido o seu progresso dos conteúdos já estudados!"> 
                     <b-progress id="progressBar" :value="this.value" :max="100" show-progress animated></b-progress>
                 </b-nav-item>
             </b-nav>
@@ -20,19 +21,19 @@
             <i class="material-icons" id="icone" v-if="this.array_styles[1] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[2]' class="botao"> Regra da Potência 
+        <b-button :variant='this.array_styles[2]' class="botao" href="/derivativeq3"> Regra da Potência 
             <i class="material-icons" id="icone" v-if="this.array_styles[2] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[3]' class="botao"> Regras de Derivação 
+        <b-button :variant='this.array_styles[3]' class="botao" href="/derivativeq4"> Regras de Derivação 
             <i class="material-icons" id="icone" v-if="this.array_styles[3] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[4]' class="botao"> Regra do Produto 
+        <b-button :variant='this.array_styles[4]' class="botao" href="/derivativeq5"> Regra do Produto 
             <i class="material-icons" id="icone" v-if="this.array_styles[4] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[5]' class="botao"> Regra da Cadeia 
+        <b-button :variant='this.array_styles[5]' class="botao" href="/derivativeq6"> Regra da Cadeia 
             <i class="material-icons" id="icone" v-if="this.array_styles[5] == 'success'"> done </i>
         </b-button>
     </div>
@@ -80,7 +81,25 @@ export default {
     padding-left: 30%;
     font-size: 1.4vw;
 
+
 }
+/* tooltip background color */
+.blue-tip .tooltip-inner {
+   background-color: #44f !important;
+   color: #fff !important;
+}
+/* arrrow color */
+.blue-tip .tooltip-inner::before {
+   border-top-color: #44f !important;
+}
+
+/* .vue-tooltip{
+    background-color: blue;
+
+    .tooltip-arrow
+      border-color: blue
+} */
+
 #nave{
     margin-top: 5%;
 }
