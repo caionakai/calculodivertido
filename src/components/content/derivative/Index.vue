@@ -16,7 +16,7 @@
             <i class="material-icons" id="icone" v-if="this.array_styles[0] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[1]' class="botao"> Derivada pela definição. 
+        <b-button :variant='this.array_styles[1]' class="botao" href="/derivativeq2"> Derivada pela definição. 
             <i class="material-icons" id="icone" v-if="this.array_styles[1] == 'success'"> done </i>
         </b-button>
 
@@ -50,8 +50,7 @@ export default {
         }
     },
     mounted(){
-        // size = 6 because there is six buttons, must be changed when more content be added 
-        // can't think in another approach is late night
+        // size = 6 because there are six buttons, must be changed when more content be added
         this.array_styles = [6];
         // array is filled with outline-success style by default
         for(var i=0; i < 6; i++){
@@ -79,15 +78,17 @@ export default {
     margin-top: 2%;
     text-align: justify;
     padding-left: 30%;
+    font-size: 1.4vw;
 
 }
 #nave{
     margin-top: 5%;
 }
 #icone{
-    position: relative;
-    margin-left: 30%;
+    position: absolute;
+    right: 18px;
     vertical-align: middle;
+    font-size: 1.7vw;
     /* padding: 2px; */
 }
 #progressBar{

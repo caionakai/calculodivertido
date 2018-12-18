@@ -13,20 +13,10 @@
 export default {
     name: 'HomePage',
     mounted(){
-        // verifica se existe um objeto chamado derivada no local storage caso contrário cria
-        // é nesse objeto onde é guardado as informações de conteúdos já estudados
-        this.test = JSON.parse(localStorage.getItem("derivada"));
-        if(this.test == null){
-            localStorage.setItem('derivada', JSON.stringify(this.data));
-        }
     },
     data(){
         return {
-            data:{
-                first: false,
-                // as outras variáveis que representam o conteúdo já estudado 
-                // são definidas no final de cada questão.
-            }
+
         }
     }
 }

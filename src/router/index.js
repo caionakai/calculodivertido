@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import IndexDerivative from '@/components/content/derivative/Index'
 import Question1Derivative from '@/components/content/derivative/Question1'
+import Question2Derivative from '@/components/content/derivative/Question2'
 import Informations from '@/components/main/Informations'
 import HomePage from '@/components/main/HomePage'
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/derivativeq1',
       name: 'Question1Derivative',
       component: Question1Derivative
+    },
+    {
+      path: '/derivativeq2',
+      name: 'Question2Derivative',
+      component: Question2Derivative
     },
     {
       path: '/informacoes',
