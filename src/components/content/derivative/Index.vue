@@ -12,29 +12,29 @@
             </b-nav>
         </div>
 
-        <b-button :variant='this.array_styles[0]' class="botao" href="/derivativeq1"> 
+        <b-button :variant="this.dictionary_styles['first']" class="botao" href="/derivativeq1"> 
             Taxa de Variação, Coeficiente Angular e Variação de uma função não linear. 
-            <i class="material-icons" id="icone" v-if="this.array_styles[0] == 'success'"> done </i>
+            <i class="material-icons" id="icone" v-if="this.dictionary_styles['first'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[1]' class="botao" href="/derivativeq2"> Derivada pela definição. 
-            <i class="material-icons" id="icone" v-if="this.array_styles[1] == 'success'"> done </i>
+        <b-button :variant="this.dictionary_styles['second']" class="botao" href="/derivativeq2"> Derivada pela definição. 
+            <i class="material-icons" id="icone" v-if="this.dictionary_styles['second'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[2]' class="botao" href="/derivativeq3"> Regra da Potência 
-            <i class="material-icons" id="icone" v-if="this.array_styles[2] == 'success'"> done </i>
+        <b-button :variant="this.dictionary_styles['third']" class="botao" href="/derivativeq3"> Regra da Potência 
+            <i class="material-icons" id="icone" v-if="this.dictionary_styles['third'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[3]' class="botao" href="/derivativeq4"> Regras de Derivação 
-            <i class="material-icons" id="icone" v-if="this.array_styles[3] == 'success'"> done </i>
+        <b-button :variant="this.dictionary_styles['fourth']" class="botao" href="/derivativeq4"> Regras de Derivação 
+            <i class="material-icons" id="icone" v-if="this.dictionary_styles['fourth'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[4]' class="botao" href="/derivativeq5"> Regra do Produto 
-            <i class="material-icons" id="icone" v-if="this.array_styles[4] == 'success'"> done </i>
+        <b-button :variant="this.dictionary_styles['fifth']" class="botao" href="/derivativeq5"> Regra do Produto 
+            <i class="material-icons" id="icone" v-if="this.dictionary_styles['fifth'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant='this.array_styles[5]' class="botao" href="/derivativeq6"> Regra da Cadeia 
-            <i class="material-icons" id="icone" v-if="this.array_styles[5] == 'success'"> done </i>
+        <b-button :variant="this.dictionary_styles['sixth']" class="botao" href="/derivativeq6"> Regra da Cadeia 
+            <i class="material-icons" id="icone" v-if="this.dictionary_styles['sixth'] == 'success'"> done </i>
         </b-button>
     </div>
 
@@ -48,23 +48,42 @@ export default {
         return{
             array_styles: [],
             value: 0,
+            dictionary_styles: {},
         }
     },
     mounted(){
-        // size = 6 because there are six buttons, must be changed when more content be added
-        this.array_styles = [6];
-        // array is filled with outline-success style by default
+        // words to create the dictionary with default value outline-success
+        this.array_styles = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth'];
+        // dictionary is filled with outline-success style by default
         for(var i=0; i < 6; i++){
-            this.array_styles[i] = 'outline-success';
+            this.dictionary_styles[this.array_styles[i]] = 'outline-success';
         }
-        // the size of 'derivada' object determine the quantity of content studied
-        var size;
-        size = Object.keys(this.derivada).length;
-        for(var i=0; i < size; i++){
-            this.array_styles[i] = 'success';
+        var tam;
+        if(this.derivada){
+            tam = Object.keys(this.derivada).length;
+        }else{
+            // if you try to put zero the colors of the buttons will change 
+            // for some mysterious reason
+            tam = 0.000000001;
         }
+        if(this.derivada){
+            var temp = this.derivada;
+            var tempDic = this.dictionary_styles;
+            Object.keys(temp).forEach(function(key){
+                // se o exercicio estiver feito, ou seja, true
+                // coloca success no dicionario
+                if(temp[key]){
+                    tempDic[key] = 'success';
+                }
+                // console.log(key, temp[key]);
+            });
+            this.dictionary_styles = tempDic;
+            // console.log(this.dictionary_styles);
+        }
+
         // 16.66 cuz 100/6  (number of contents) = 16.66 hence: 
-        this.value = size * 16.66;
+        // valor da barra de progresso
+        this.value = tam * 16.66;
     },
     beforeCreate(){
         // retrieve 'derivada' data available on localStorage
