@@ -12,28 +12,28 @@
             </b-nav>
         </div>
 
-        <b-button :variant="this.dictionary_styles['first']" class="botao" href="/derivativeq1"> 
+        <b-button :variant="this.dictionary_styles['first']" class="botao" href="#/derivativeq1"> 
             Taxa de Variação, Coeficiente Angular e Variação de uma função não linear. 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['first'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant="this.dictionary_styles['second']" class="botao" href="/derivativeq2"> Derivada pela definição. 
+        <b-button :variant="this.dictionary_styles['second']" class="botao" href="#/derivativeq2"> Derivada pela definição. 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['second'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant="this.dictionary_styles['third']" class="botao" href="/derivativeq3"> Regra da Potência 
+        <b-button :variant="this.dictionary_styles['third']" class="botao" href="#/derivativeq3"> Regra da Potência 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['third'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant="this.dictionary_styles['fourth']" class="botao" href="/derivativeq4"> Regras de Derivação 
+        <b-button :variant="this.dictionary_styles['fourth']" class="botao" href="#/derivativeq4"> Regras de Derivação 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['fourth'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant="this.dictionary_styles['fifth']" class="botao" href="/derivativeq5"> Regra do Produto 
+        <b-button :variant="this.dictionary_styles['fifth']" class="botao" href="#/derivativeq5"> Regra do Produto 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['fifth'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant="this.dictionary_styles['sixth']" class="botao" href="/derivativeq6"> Regra da Cadeia 
+        <b-button :variant="this.dictionary_styles['sixth']" class="botao" href="#/derivativeq6"> Regra da Cadeia 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['sixth'] == 'success'"> done </i>
         </b-button>
     </div>
@@ -89,6 +89,11 @@ export default {
         // retrieve 'derivada' data available on localStorage
         this.derivada = JSON.parse(localStorage.getItem("derivada"));
     },
+    methods:{
+        changeRoute(){
+            window.location.href = "derivativeq1";
+        }
+    }
 }
 </script>
 

@@ -13,7 +13,7 @@
       </b-nav-item>
     </b-navbar-nav>
     <b-navbar-nav class="ml-auto">
-      <b-nav-item href="/informacoes" right>
+      <b-nav-item href="#/informacoes" right>
         Informações
       <i class="material-icons" id="icone"> info </i>
       </b-nav-item>

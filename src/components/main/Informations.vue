@@ -4,7 +4,7 @@
         <h1>Informações</h1>
         <hr>
         <h3>Materiais</h3>
-        <p>Alguns vídeos utilizados foram retirados do site <a href="www.khanacademy.org">www.khanacademy.org</a>,
+        <p>Alguns vídeos utilizados foram retirados do site <a href="http://www.khanacademy.org">www.khanacademy.org</a>,
         onde todo o conteúdo do Khan Academy está disponível gratuitamente.
         </p>
         <p>Alguns exercícios foram retirados do livro de Cálculo do James Stewart e do livro Cálculo Diferencial e Integral

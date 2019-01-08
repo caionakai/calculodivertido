@@ -11,15 +11,28 @@ import Question6Derivative from '@/components/content/derivative/Question6'
 import Informations from '@/components/main/Informations'
 import HomePage from '@/components/main/HomePage'
 
+import Simulations from '@/components/content/simulations/index'
+import DerivativeFunction from '@/components/content/simulations/derivativefunction'
+
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
       name: 'HomePage',
       component: HomePage
+    },
+    {
+      path: '/simulacoes',
+      name: 'Simulations',
+      component: Simulations
+    },
+    {
+      path: '/funcaoderivada',
+      name: 'DerivativeFunction',
+      component: DerivativeFunction
     },
     {
       path: '/derivative',

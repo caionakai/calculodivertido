@@ -1,10 +1,10 @@
 <template>
     <div class="whole">
-        <h1 id="titulo">Conteúdos Disponíveis</h1>
+        <h1 id="titulo">Simulações</h1>
         <hr>
         <div id="botoes">
-            <b-button variant="outline-success" id="botao" @click="changeRoute('derivative')"> Derivadas </b-button>
-            <b-button variant="outline-success" id="botao" @click="changeRoute('simulacoes')"> Simulações </b-button>
+            <b-button variant="outline-success" id="botao" href="#/funcaoderivada"> A Função Derivada </b-button>
+            <b-button variant="outline-success" id="botao"> Volume da Esfera </b-button>
             <!-- <a href="derivative">Derivada</a> -->
         </div>
     </div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-    name: 'HomePage',
+    name: 'Simulations',
     mounted(){
     },
     data(){
