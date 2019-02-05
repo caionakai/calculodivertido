@@ -4,8 +4,8 @@
         <hr>
         <div id="botoes">
             <b-button variant="outline-success" id="botao" @click="changeRoute('derivative')"> Derivadas </b-button>
+            <b-button variant="outline-success" id="botao" @click="changeRoute('integral')"> Integrais </b-button>
             <b-button variant="outline-success" id="botao" @click="changeRoute('simulacoes')"> Simulações </b-button>
-            <!-- <a href="derivative">Derivada</a> -->
         </div>
     </div>
 </template>

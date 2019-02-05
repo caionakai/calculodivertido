@@ -8,11 +8,14 @@ import Question4Derivative from '@/components/content/derivative/Question4'
 import Question5Derivative from '@/components/content/derivative/Question5'
 import Question6Derivative from '@/components/content/derivative/Question6'
 
+import IndexIntegral from '@/components/content/integral/index'
+import Question1Integral from '@/components/content/integral/Question1'
+
 import Informations from '@/components/main/Informations'
 import HomePage from '@/components/main/HomePage'
 
 import Simulations from '@/components/content/simulations/index'
-import DerivativeFunction from '@/components/content/simulations/derivativefunction'
+import GenericSimulationComponent from '@/components/content/simulations/generic_component_simulation'
 
 Vue.use(Router)
 
@@ -30,14 +33,19 @@ export default new Router({
       component: Simulations
     },
     {
-      path: '/funcaoderivada',
-      name: 'DerivativeFunction',
-      component: DerivativeFunction
+      path: '/simulationggb/:titulo',
+      name: 'GenericSimulationComponent',
+      component: GenericSimulationComponent
     },
     {
       path: '/derivative',
       name: 'IndexDerivative',
       component: IndexDerivative
+    },
+    {
+      path: '/integralq1',
+      name: 'Question1Integral',
+      component: Question1Integral
     },
     {
       path: '/derivativeq1',
@@ -68,6 +76,11 @@ export default new Router({
       path: '/derivativeq6',
       name: 'Question6Derivative',
       component: Question6Derivative
+    },
+    {
+      path: '/integral',
+      name: 'IndexIntegral',
+      component: IndexIntegral
     },
     {
       path: '/informacoes',
