@@ -7,7 +7,7 @@
 
   <b-collapse is-nav id="nav_collapse">
     <b-navbar-nav>
-      <b-nav-item  href="/">
+      <b-nav-item  href="/calculodivertido/">
       <i class="material-icons" id="icone"> home </i>
         <p class="d-inline" >Início</p>
       </b-nav-item>

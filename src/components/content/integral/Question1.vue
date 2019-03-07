@@ -28,8 +28,7 @@
                         <div class="enunciado">
                             <a id="quest">Questão:</a>
                             <p> 
-                                Dada a função: f(x) = x²-2x.
-                                Encontre o coeficiente angular de uma reta tangente no ponto P(1,-1).
+                                
                             </p>
                         </div>
                         <hr>

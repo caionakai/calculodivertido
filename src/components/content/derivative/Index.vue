@@ -3,7 +3,7 @@
         <div id="nave">
             <b-nav fill tabs>
                 <b-tooltip class="blue-tip" target="conteudo" title="Você está estudando derivadas!"></b-tooltip>
-                <b-nav-item href="/"> <i class="material-icons"> keyboard_arrow_left</i> </b-nav-item>
+                <b-nav-item href="/calculodivertido/"> <i class="material-icons"> keyboard_arrow_left</i> </b-nav-item>
                 <b-nav-item active id="conteudo" >Derivadas</b-nav-item>
                 <div v-b-tooltip.hover title="Aqui é exibido o seu progresso dos conteúdos já estudados!" class="col-sm-2" id="progress">Progresso</div>
                 <b-nav-item v-b-tooltip.hover title="Aqui é exibido o seu progresso dos conteúdos já estudados!"> 
