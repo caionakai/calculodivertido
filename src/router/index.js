@@ -10,6 +10,8 @@ import Question6Derivative from '@/components/content/derivative/Question6'
 
 import IndexIntegral from '@/components/content/integral/index'
 import Question1Integral from '@/components/content/integral/Question1'
+import Question2Integral from '@/components/content/integral/Question2'
+import Question3Integral from '@/components/content/integral/Question3'
 
 import Informations from '@/components/main/Informations'
 import HomePage from '@/components/main/HomePage'
@@ -46,6 +48,16 @@ export default new Router({
       path: '/integralq1',
       name: 'Question1Integral',
       component: Question1Integral
+    },
+    {
+      path: '/integralq2',
+      name: 'Question2Integral',
+      component: Question2Integral
+    },
+    {
+      path: '/integralq3',
+      name: 'Question3Integral',
+      component: Question3Integral
     },
     {
       path: '/derivativeq1',

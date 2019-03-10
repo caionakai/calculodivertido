@@ -17,12 +17,12 @@
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['first'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant="this.dictionary_styles['second']" class="botao" href="#/derivativeq2"> 
+        <b-button :variant="this.dictionary_styles['second']" class="botao" href="#/integralq2"> 
             Integração por substituição de variáveis 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['second'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant="this.dictionary_styles['third']" class="botao" href="#/derivativeq3"> 
+        <b-button :variant="this.dictionary_styles['third']" class="botao" href="#/integralq3"> 
             Integração por partes 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['third'] == 'success'"> done </i>
         </b-button>

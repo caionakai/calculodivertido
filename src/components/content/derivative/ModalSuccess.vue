@@ -23,6 +23,7 @@ export default {
     props: {
         show: Boolean,
         isLast: Boolean,
+        isIntegrate: Boolean,
     },
     methods:{
         alteraComponentePai(){
@@ -32,7 +33,12 @@ export default {
             this.alteraComponentePai();
         },
         goHome(){
-            this.$router.push({ name: "IndexDerivative" });
+            // se o modal for clicado pelas questoes de integral
+            if(this.isIntegrate){
+                this.$router.push({ name: "IndexIntegral" });
+            }else{
+                this.$router.push({ name: "IndexDerivative" });
+            }
         }
     }
 }

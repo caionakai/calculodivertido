@@ -10,14 +10,9 @@
                     <b-tab title="Conteúdo Teórico" active>
                         <h4>Integrais Indefinidas</h4>
                         <video width="30%" height="15%" controls>
-                            <source src="../../../assets/Videos/video1.mp4" type="video/mp4">
+                            <source src="../../../assets/Videos/integral-q1.webm" type="video/mp4">
                             Há algum problema com o vídeo, utilize outro navegador!
                         </video> 
-                        <h4>Derivada como o coeficiente angular de uma reta tangente.</h4>
-                        <video width="30%" height="15%" controls>
-                        <source src="../../../assets/Videos/video1-2.mp4" type="video/mp4">
-                        Há algum problema com o vídeo, utilize outro navegador!
-                        </video>
                     </b-tab>
 
                     <!-- Exercícios a partir daqui  -->
@@ -26,7 +21,10 @@
                             <i class="material-icons" id="icone" v-if="!isDisabled2"> done </i>
                         </template>
                         <div class="enunciado">
-                            <a id="quest">Questão:</a>
+                            <a id="quest">Questão:
+                            </a>
+                                Calcule a seguinte integral:
+                                <vue-mathjax style="display:inline-block" :formula="formula"></vue-mathjax>
                             <p> 
                                 
                             </p>
@@ -36,7 +34,7 @@
                             <label id="1a" for="input1A">a)</label>
                             <input type="radio" id="input1A" value="1a" name="quest" v-model="selected">
                             <label for="input1A">
-                                f'(1) = 0
+                                <vue-mathjax style="display:inline-block" :formula="formula2"></vue-mathjax>
                             </label>
                         </p>
                         <hr>
@@ -44,7 +42,7 @@
                             <label id="1b" for="input1B">b)</label>
                             <input type="radio" id="input1B" value="1b" name="quest" v-model="selected">
                             <label for="input1B">
-                                f'(1) = 2
+                                <vue-mathjax style="display:inline-block" :formula="formula3"></vue-mathjax>
                             </label>
                         </p>
                         <hr>
@@ -52,7 +50,7 @@
                             <label id="1c" for="input1C">c)</label>
                             <input type="radio" id="input1C" value="1c" name="quest" v-model="selected">
                             <label for="input1C">
-                                f'(1) = 4
+                                <vue-mathjax style="display:inline-block" :formula="formula4"></vue-mathjax>
                             </label>
                         </p>
                         <hr>
@@ -60,7 +58,7 @@
                             <label id="1d" for="input1D">d)</label>
                             <input type="radio" id="input1D" value="1d" name="quest" v-model="selected">
                             <label for="input1D">
-                                f'(1) = 6
+                                <vue-mathjax style="display:inline-block" :formula="formula5"></vue-mathjax>
                             </label>
                         </p>
                         <hr>
@@ -77,9 +75,10 @@
                             </template>
                         <div class="enunciado">
                             <a id="quest">Questão:</a>
-                            <p class="title"> Uma garota chutou uma bola perto de um físico/matemático e este por sua vez, estimou através
-                            de equipamentos de precisão que a posição da bola é dada pela equação x = 4+12t-3t², onde t representa o 
-                            tempo em segundos e x a posição dada em metros, qual a velocidade da bola depois de 1 segundo?
+                            <p class="title"> 
+                                Um botânico descobre que certo tipo de árvore cresce de tal forma que sua altura h(t),
+                                após t anos, está variando a uma taxa de <vue-mathjax style="display:inline-block" :formula="formula6"></vue-mathjax> metros/ano. Se a árvore tinha 60cm de altura
+                                quando foi plantada, qual sua altura daqui a 27 anos?(CDI, pág 707).
                             </p>
                         </div>
                         <hr>
@@ -87,7 +86,7 @@
                             <label id="2a" for="input2A">a)</label>
                             <input type="radio" id="input2A" name="quest" value="2a" v-model="selected">
                             <label for="input2A">
-                                v = 4m/s
+                                34,31m
                             </label>
                         </p>
                         <hr>
@@ -95,7 +94,7 @@
                             <label id="2b" for="input2B">b)</label>
                             <input type="radio" id="input2B" value="2b" name="quest" v-model="selected">
                             <label for="input2B">
-                                v = 6m/s
+                                32,22m
                             </label>
                         </p>
                         <hr>
@@ -104,7 +103,7 @@
                             <label id="2c" for="inputC">c)</label>
                             <input type="radio" id="input2C" value="2c" name="quest" v-model="selected">
                             <label for="input2C">
-                                v = 5m/s
+                                37,41m
                             </label>
                         </p>
                         <hr>
@@ -113,7 +112,7 @@
                             <label id="2d" for="inputD">d)</label>
                             <input type="radio" id="input2D" value="2d" name="quest" v-model="selected">
                             <label for="input2D">
-                                v = 3m/s
+                                35m
                             </label>
                         </p>
                         <hr>
@@ -122,60 +121,10 @@
                         </b-button>
                     </b-tab>
 
-                    <b-tab :disabled=isDisabled3>
-                        <template slot="title">Exercício 3
-                            <i class="material-icons" id="icone" v-if="iconTab3"> done </i>
-                        </template>
-                        <div class="enunciado">
-                            <a id="quest">Questão:</a>
-                            <p class="title"> 
-                                Uma bola é atirada no ar com uma velocidade de 40 pés/s, e sua altura em pés após t segundos é
-                                dada por y = 40t - 16t². Encontre a velocidade instantânea quando t = 2.
-                            </p>
-                        </div>
-                        <hr>
-                        <p id="t">
-                            <label id="3a" for="inputA">a)</label>
-                            <input type="radio" id="input3A" name="quest" value="3a" v-model="selected">
-                            <label for="input3A">
-                                v = 24 pés/s
-                            </label>
-                        </p>
-                        <hr>
-                        <p>
-                            <label id="3b" for="input3B">b)</label>
-                            <input type="radio" id="input3B" value="3b" name="quest" v-model="selected">
-                            <label for="input3B">
-                                v = 16 pés/s
-                            </label>
-                        </p>
-                        <hr>
-                        
-                        <p>
-                            <label id="3c" for="input3C">c)</label>
-                            <input type="radio" id="input3C" value="3c" name="quest" v-model="selected">
-                            <label for="input3C">
-                                v = -16 pés/s
-                            </label>
-                        </p>
-                        <hr>
-
-                        <p>
-                            <label id="3d" for="input3D">d)</label>
-                            <input type="radio" id="input3D" value="3d" name="quest" v-model="selected">
-                            <label for="input3D">
-                                v = -24 pés/s
-                            </label>
-                        </p>
-                        <hr>
-                        <b-button  @click="checkForm()" variant="success">
-                            Confirmar Resposta
-                        </b-button>
-                    </b-tab>
 
                 </b-tabs>
             </b-card>
-            <ModalSuccess v-if="ok" :isLast="isLast? true : false" :show="ok" @modal="changeOkfromChild"></ModalSuccess>
+            <ModalSuccess v-if="ok" :isIntegrate=true :isLast="isLast? true : false" :show="ok" @modal="changeOkfromChild"></ModalSuccess>
             <ModalFailure v-if="error" :isLast="isLast" :show="error" @modal="changeTabfromChild"></ModalFailure>
         </div>
 
@@ -187,11 +136,13 @@
 <script>
 import ModalSuccess from "../derivative/ModalSuccess";
 import ModalFailure from "../derivative/ModalFailure";
+import { VueMathjax } from 'vue-mathjax'
 export default {
   name: "Question1Integral",
   components: {
     ModalSuccess,
     ModalFailure,
+    'vue-mathjax': VueMathjax,
   },
   data(){
       return{
@@ -213,6 +164,16 @@ export default {
     goMain(){
         this.$router.push({ name: "IndexIntegral" });
     },
+    updateFormula: function () {
+        this.$nextTick(function () {
+        this.formula = '$$\\int { ({4x^5}+7) dx}$$'
+        this.formula2 = '$${2x^6\\over3}+7x+c$$'
+        this.formula3 = '$${2x^6}+x+c$$'
+        this.formula4 = '$${2x^5\\over2}+7x+c$$'
+        this.formula5 = '$${2x^5\\over2}+x+c$$'
+        this.formula6 = '$${0.06t^{2\\over3}}+0.3t^{1\\over2}$$'
+      })
+    },    
     trocaTab(){
         this.tabIndex++;
     },
@@ -223,7 +184,7 @@ export default {
             setTimeout(this.trocaTab, 100)
             this.ok = true;
         }
-        else if(this.selected == "2b"){
+        else if(this.selected == "2c"){
             // libera a terceira tab
             this.isDisabled3 = false;
 
@@ -232,20 +193,15 @@ export default {
             
             // abre o modal
             this.ok = true;
-        }
-        else if(this.selected == "3d"){
-            this.iconTab3 = true;
             // ativa variavel para redirecionar pra pagina inicial
             this.isLast = true;
-            // abre o modal
-            this.ok = true;
             // verifica se existe o objeto derivada no localStorage            
-            this.test = JSON.parse(localStorage.getItem("derivada"));
+            this.test = JSON.parse(localStorage.getItem("integral"));
             if(this.test == null){
-                localStorage.setItem('derivada', JSON.stringify(this.data));
+                localStorage.setItem('integral', JSON.stringify(this.data));
             }else{
                 this.test.first = true
-                localStorage.setItem('derivada', JSON.stringify(this.test));                
+                localStorage.setItem('integral', JSON.stringify(this.test));                
             }
         }
         else{
@@ -296,14 +252,15 @@ export default {
   },
   beforeCreate(){
     // retrieve 'derivada' data available on localStorage
-    this.derivada = JSON.parse(localStorage.getItem("derivada"));
+    this.integral = JSON.parse(localStorage.getItem("integral"));
   },
   mounted() {
+    this.updateFormula();
     // verifica se o exercicio já foi feito antes, se sim então libera a navegação entre as tabs
-    if(this.derivada.first){
+    if(this.integral.first){
         this.isDisabled2 = false;
         this.isDisabled3 = false;
-        this.iconTab3 = true;
+        // this.iconTab3 = true;
     }
   },
 };
@@ -312,8 +269,9 @@ export default {
 <style scoped>
 h4{
     text-align: justify;
-    margin-left: 25%;
+    margin-left: 41%;
     margin-top: 1%;
+    margin-bottom: 2%;
 }
 .title{
     text-align: justify;
