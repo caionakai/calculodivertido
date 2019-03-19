@@ -27,7 +27,7 @@
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['third'] == 'success'"> done </i>
         </b-button>
 
-        <b-button :variant="this.dictionary_styles['fourth']" class="botao" href="#/derivativeq4"> 
+        <!-- <b-button :variant="this.dictionary_styles['fourth']" class="botao" href="#/derivativeq4"> 
             Integrais Trigonométricas 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['fourth'] == 'success'"> done </i>
         </b-button>
@@ -40,7 +40,7 @@
         <b-button :variant="this.dictionary_styles['sixth']" class="botao" href="#/derivativeq6"> 
             Integral content 
             <i class="material-icons" id="icone" v-if="this.dictionary_styles['sixth'] == 'success'"> done </i>
-        </b-button>
+        </b-button> -->
     </div>
 
 </template>
@@ -88,7 +88,7 @@ export default {
 
         // 16.66 cuz 100/6  (number of contents) = 16.66 hence: 
         // valor da barra de progresso
-        this.value = tam * 16.66;
+        this.value = tam * 33.33;
     },
     beforeCreate(){
         // retrieve 'derivada' data available on localStorage

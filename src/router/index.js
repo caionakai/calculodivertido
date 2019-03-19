@@ -16,6 +16,10 @@ import Question3Integral from '@/components/content/integral/Question3'
 import Informations from '@/components/main/Informations'
 import HomePage from '@/components/main/HomePage'
 
+import DerivativeFunctionSimulation from '@/components/content/simulations/derivative_function'
+import RiemannSimulation from '@/components/content/simulations/riemann'
+import TrapezoidalSimulation from '@/components/content/simulations/trapezoidal'
+
 import Simulations from '@/components/content/simulations/index'
 import GenericSimulationComponent from '@/components/content/simulations/generic_component_simulation'
 
@@ -98,6 +102,21 @@ export default new Router({
       path: '/informacoes',
       name: 'Informations',
       component: Informations
+    },
+    {
+      path: '/derivativesimul',
+      name: 'DerivativeFunctionSimulation',
+      component: DerivativeFunctionSimulation
+    },
+    {
+      path: '/riemannsimul',
+      name: 'RiemannSimulation',
+      component: RiemannSimulation
+    },
+    {
+      path: '/trapezoidalsimul',
+      name: 'TrapezoidalSimulation',
+      component: TrapezoidalSimulation
     }
   ]
 })
