@@ -70,7 +70,7 @@ export default {
         showFullscreenButton: true,
         scale: 1,
         // autoscale lets the app with low resolution
-        disableAutoScale: true,
+        disableAutoScale: false,
         allowUpscale: false,
         clickToLoad: false,
         appName: "classic",

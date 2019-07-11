@@ -11,6 +11,18 @@
       <i class="material-icons" id="icone"> home </i>
         <p class="d-inline" >Início</p>
       </b-nav-item>
+      <b-nav-item  href="#/derivative/">
+      <i class="material-icons" id="icone"> create </i>
+        <p class="d-inline" >Derivadas</p>
+      </b-nav-item>
+      <b-nav-item  href="#/integral/">
+      <i class="material-icons" id="icone"> create </i>
+        <p class="d-inline" >Integrais</p>
+      </b-nav-item>            
+      <b-nav-item  href="#/simulacoes/">
+      <i class="material-icons" id="icone"> show_chart </i>
+        <p class="d-inline" >Simulações</p>
+      </b-nav-item>      
     </b-navbar-nav>
     <b-navbar-nav class="ml-auto">
       <b-nav-item href="#/informacoes" right>
